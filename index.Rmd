@@ -12,13 +12,13 @@ output:
       collapsed: yes
       smooth_scroll: yes
 ---
+
 ```{r global_options, include=FALSE}
 library(openxlsx)
 library(knitr)
 library(kableExtra)
 library(tidyverse)
 ```
-
 
 ```{r logo, echo=FALSE, fig.align='center', out.width="40%"}
 library(knitr)
@@ -55,5 +55,5 @@ df <- as.tibble(cbind.data.frame(Data, Título))
 kable(df, format = "html", row.names = T, escape = F) %>% 
   kable_styling(position = "center", latex_options = "striped") %>% 
     row_spec(0, bold = T)
-
 ```
+
