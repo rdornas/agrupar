@@ -1,0 +1,35 @@
+---
+title: "Agrupar - Grupo de Estudos em Linguagem R"
+date: 'Criado em: 23 de março de 2018; Atualizado em `r format(Sys.time(), "%d de %B de %Y")`'
+output:
+  bookdown::html_document2:
+    highlight: haddock
+    number_sections: no
+    theme: yeti
+    toc: no
+    toc_depth: '3'
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```{r logo, echo=FALSE, fig.align='center', out.width="40%"}
+library(knitr)
+include_graphics("Agrupar.png")
+```
+
+#Quem somos?
+
+O AGRUPAR – Grupo de Estudos em Linguagem R – é uma iniciativa de alunos e professores do [Programa de Pós-Graduação em Análise e Modelagem de Sistemas Ambientais (IGC/UFMG)](http://www.igc.ufmg.br/index.php?option=com_content&view=article&id=331:pos-graduacao-em-analise-e-modelagem-de-sistemas-ambientais&catid=2:uncategorised) para fomentar a discussão e o compartilhamento de conhecimentos sobre a linguagem computacional R.
+
+Pesquisas recentes mostram que a popularidade do R tem aumentado substancialmente nos últimos anos. Esta linguagem, de código aberto, vem se tornando a língua padrão para ciência de dados, o que inclui a manipulação de dados estatísticos e geração de gráficos.
+
+Dada a relevância do R e a sua interface com análise e modelagem de sistemas ambientais, decidimos criar o AGRUPAR. O objetivo é termos um ambiente de discussão em diversos aspectos relacionados ao R, alguns mais, outros menos aprofundados. De qualquer maneira, a intenção é iniciar os encontros com temas mais básicos e ir aprofundando em assuntos mais complexos com o próprio desenvolvimento do grupo.
+
+No primeiro semestre de 2018, os encontros quinzenais acontecerão às quintas-feiras, de 14 às 16 h. As duas primeiras reuniões serão realizadas nos dias 05 e 19 de abril, na sala 334 do IGC (Sala de Convívio Social). Dependendo do número de interessados, o local poderá ser alterado, sempre com prévio aviso.
+O primeiro encontro terá menos ênfase em R, mas abordará um tema não menos importante: referenciamento bibliográfico automatizado em textos científicos com Mendeley Desktop.
+
+Se você tem interesse em participar do AGRUPAR, por favor, preencha o seu nome e e-mail na planilha no seguinte link: [Link](https://docs.google.com/spreadsheets/d/1ZwpRg-oN36HeczEl9DLDKYJytStPNlL_CV_sy6eg6kI/edit?usp=sharing). Em caso de dúvidas, mande-nos um [e-mail](mailto:rapdornas@gmail.com)!
+
+Até breve!
+
+Rubem Dornas, Fernanda Teixeira e Marina Scarpelli
