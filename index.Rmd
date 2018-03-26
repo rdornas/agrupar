@@ -35,11 +35,17 @@ Dada a relevância do R e a sua interface com análise e modelagem de sistemas a
 
 No primeiro semestre de 2018, os encontros quinzenais acontecerão às quintas-feiras, de 14 às 16 h. As duas primeiras reuniões serão realizadas na sala 334 do IGC (Sala de Convívio Social). Dependendo do número de interessados, o local poderá ser alterado, sempre com prévio aviso. O primeiro encontro, que será no dia 05/04 (confira a nossa [**agenda**](#Agenda)), terá menos ênfase em R, mas abordará um tema não menos importante: referenciamento bibliográfico automatizado em textos científicos com Mendeley Desktop.
 
-Se você tem interesse em participar do AGRUPAR, por favor, preencha o seu nome e e-mail na planilha no seguinte [**link**](https://docs.google.com/spreadsheets/d/1ZwpRg-oN36HeczEl9DLDKYJytStPNlL_CV_sy6eg6kI/edit?usp=sharing). Em caso de dúvidas, mande-nos um [**e-mail**](mailto:rapdornas@gmail.com)!
+Se você tem interesse em participar do AGRUPAR, por favor, preencha o [**cadastro**](#Cadastro). Em caso de dúvidas, mande-nos um [**e-mail**](mailto:rapdornas@gmail.com)!
 
 Até breve!
 
 Rubem Dornas, Fernanda Teixeira e Marina Scarpelli
+
+***
+
+#Cadastro {#Cadastro}
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbcVIKenKHUT9208tPcUz3ALcNujQ8SR4B1m31sg0kOOMB2w/viewform?embedded=true" width="480" height="250" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
 
 ***
 
