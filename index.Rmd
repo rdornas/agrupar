@@ -1,6 +1,6 @@
 ---
 title: "Agrupar - Grupo de Estudos em Linguagem R"
-date: 'Criado em: 23 de março de 2018; Atualizado em `r format(Sys.time(), "%d de %b de %Y")`'
+date: 'Criado em: 23 de Março de 2018; Atualizado em `r format(Sys.time(), "%d de %B de %Y")`'
 output:
   bookdown::html_document2:
     highlight: haddock
