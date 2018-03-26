@@ -45,7 +45,7 @@ Rubem Dornas, Fernanda Teixeira e Marina Scarpelli
 
 #Cadastro {#Cadastro}
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbcVIKenKHUT9208tPcUz3ALcNujQ8SR4B1m31sg0kOOMB2w/viewform?embedded=true" width="480" height="250" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbcVIKenKHUT9208tPcUz3ALcNujQ8SR4B1m31sg0kOOMB2w/viewform?embedded=true" width="480" height="875" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
 
 ***
 
