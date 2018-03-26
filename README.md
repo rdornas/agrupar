@@ -1,5 +1,7 @@
 # AGRUPAR - Grupo de Estudos em Linguagem R
 
+![AGRUPAR](Agrupar.png)
+
 O AGRUPAR – Grupo de Estudos em Linguagem R – é uma iniciativa de alunos e professores do [Programa de Pós-Graduação em Análise e Modelagem de Sistemas Ambientais (IGC/UFMG)](http://www.igc.ufmg.br/index.php?option=com_content&view=article&id=331:pos-graduacao-em-analise-e-modelagem-de-sistemas-ambientais&catid=2:uncategorised) para fomentar a discussão e o compartilhamento de conhecimentos sobre a linguagem computacional R.
 
 Pesquisas recentes mostram que a popularidade do R tem aumentado substancialmente nos últimos anos. Esta linguagem, de código aberto, vem se tornando a língua padrão para ciência de dados, o que inclui a manipulação de dados estatísticos e geração de gráficos.
