@@ -21,7 +21,7 @@ library(tidyverse)
 ```
 
 ```{r logo, echo=FALSE, fig.align='center', out.width="40%"}
-library(knitr)
+
 include_graphics("Agrupar.png")
 ```
 
