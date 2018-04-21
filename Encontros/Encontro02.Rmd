@@ -1,0 +1,132 @@
+---
+title: "Encontro 02 - Estrutura de dados em linguagem R"
+author: "AGRUPAR - Grupo de Estudos em Linguagem R"
+date: Criado em 19 de abril de 2018 -  Atualizado em `r format(Sys.time(), "%d de
+  %B de %Y")`
+output:
+  bookdown::html_document2:
+    highlight: haddock
+    number_sections: yes
+    theme: yeti
+    toc: yes
+    toc_depth: '3'
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```{r global_options, include=FALSE}
+library(knitr)
+set.seed(42)
+```
+
+```{r logo, echo=FALSE, fig.align='center', out.width="40%"}
+include_graphics("Agrupar.png")
+```
+
+Conteúdo retirado/baseado/inspirado em: [http://rex-analytics.com/](http://rex-analytics.com/r-for-excel-users/). Obrigado, Steph de Silva!
+
+# Introdução: Mudando do Excel para o R.
+
+Mudar para o R (ou qualquer outra linguagem de programação) do Excel pode parecer muito assustador. Um dos grandes obstáculos, na minha opinião, é ter uma compreensão mental de como armazenamos dados em estruturas em R. Você pode ver suas estruturas de dados em R, mas ao contrário do Excel em frente ao seu rosto, nem sempre é intuitivo para o usuário que está começando.
+
+Há muitas informações excelentes sobre como, por que e onde: veja um resumo básico de algumas maneiras comuns como estruturamos nossos dados em R e como isso se compara ao que você já conhece: o Excel.
+
+# Tipos de estruturas de dados
+## Estruturas homogêneas
+
+A vantagem das estruturas homogêneas é que elas podem ser mais rápidas de serem processadas - mas é preciso usar quantidades massivas de poder de processamento para que isso importe muito. Então, não se preocupe muito com isso por enquanto. A desvantagem é que eles podem ser restritivos em comparação com estruturas heterogênas, sobre as quais falaremos a seguir.
+
+Homogêneo, neste caso, significa que todos os "bits" dentro dessas estruturas precisam ser do mesmo tipo. Existem muitos tipos de dados em R, mas os básicos que se precisa saber ao começar pela primeira vez são:
+
+* Números - Estes vêm em duas variedades:
+    - Duplos (*double*) - números não inteiros, usando ponto como separador decimal. Ex.: 1.23 e 4.56.
+    - Inteiros (*integer*) - o próprio nome já diz, números inteiros: 1, 2, 3. Nota: frequentemente assinalados com um L maiúsculo após o número (1L, 2L, 3L).
+* Texto (*string*) - Basicamente apenas dados de texto - compostos de caracteres. Ex.: cachorro, gato, pássaro.
+* Booleano (*logical*) - Estes tomam duas formas: **Verdadeiro** (TRUE ou T) ou **Falso** (FALSE ou F).
+
+### Vetor
+
+Vetor é como uma coluna numa planilha de Excel - há um número arbitrário de *slots* e dados em cada um. Em tese, todos os dados devem ser do mesmo tipo: número, texto, booleano...
+
+```{r Vetor}
+v_numero <- c(1, 2, 3, 4)
+v_texto <- c("a", "B", "D", "c") # para dados de texto é necessário colocar aspas em cada elemento.
+v_booleano <- c(TRUE, TRUE, FALSE, TRUE)
+```
+
+### Matriz
+
+Pense nisso como a planilha inteira - uma série de colunas em um arranjo bidimensional. Mas... esse arranjo é homogêneo - todos os tipos são os mesmos.
+
+```{r Matriz}
+m_numero <- matrix(c(1, 2, 3, 4), nrow = 2, ncol = 2)
+m_texto <- matrix(c("a", "B", "D", "c", "B", "D", "c"), nrow = 3, ncol = 2)
+m_booleano <- matrix(c(TRUE, T, FALSE, TRUE, FALSE, F), nrow = 3, ncol = 2)
+```
+
+Perceba que o R gera um aviso, alertando que o número de elementos do vetor ("comprimento dos dados") não é submúltiplo do número de linhas (o mesmo poderia ser dito para as colunas). No caso deste exemplo, o vetor possui 7 elementos, enquanto que a matriz, por ter 3 linhas e 2 colunas, poderia abrigar apenas submúltiplos/múltiplos do número de linhas e colunas. Faça o teste com vetores de diferentes tamanhos.
+
+### Array - conjunto de matrizes
+
+Este é o equivalente n-dimensional da matriz - um pacote de planilhas na pasta de trabalho, se desejar. Mais uma vez, é homogêneo.
+
+```{r Array}
+a_numero <- array(c(1:24), dim = c(3, 4, 2))
+a_texto <- array(LETTERS[1:26], dim = c(2, 2, 6)) # não avisa sobre ser submúltiplo/múltiplo
+```
+
+Perceba que, para *array* o R não avisa, como no caso de matriz, que o conjunto não é submúltiplo/múltiplo. Dessa forma, ele simplesmente ignora dados que não se encaixem na estrutura estipulada no código (nesse caso, letras "Y" e "Z").
+
+## Estruturas heterogêneas
+
+Estruturas de dados heterogêneas significam apenas que o conteúdo pode ser de vários tipos. Esta é uma propriedade realmente útil e torna essas estruturas muito poderosas. Existem dois tipos principais: listas e *data frame*.
+
+### Lista
+
+Como um vetor, podemos pensar em uma lista como uma coluna de uma planilha. Mas, ao contrário de um vetor, o conteúdo da lista pode ser de qualquer tipo.
+
+```{r Lista}
+l_lista1 <- c(1, 2, "a", TRUE)
+l_lista2 <- list(c(1, 2, "a", TRUE), m_texto)
+```
+
+### *Data frame*
+
+Um *data frame* é realmente uma lista de listas. Geralmente, o conteúdo de cada sublista (coluna do *data frame*) é o mesmo (como você esperaria em uma planilha), mas não é necessariamente o caso. Os *data frames* podem ter colunas nomeadas (assim como outras estruturas) e você pode acessar os dados usando esses nomes.
+
+```{r Dataframe}
+d_dataframe1 <- cbind(v_numero, v_texto, v_booleano)
+d_dataframe2 <- cbind.data.frame(v_numero, v_texto, v_booleano, l_lista1)
+```
+
+*Data frames* podem ser estendidos para estruturas bastante complexas. Os *data frames* não precisam ser "planos". Como você pode criar listas de listas, é possível ter *data frames* em que uma ou mais colunas tenham listas em cada espaço, elas são chamadas de *data frames* aninhados.
+
+Esta e outras propriedades tornam o tipo de dados extremamente poderoso para manipular dados. Há toda uma série de operações e funções em R dedicadas à manipulação de *data frames*. Matrizes e vetores podem ser convertidos em *data frames*: uma maneira é a função `as.data.frame`.
+
+A desvantagem dessa estrutura é que ela pode ser mais lenta de processar, mas se você está no estágio de codificação, isso provavelmente não é importante para você agora! A linguagem R é configurada para fazer um monte de coisas realmente úteis usando *data frames*. Esta é a estrutura de dados provavelmente mais semelhante a uma planilha do Excel.
+
+# Considerações finais
+
+Como você sabe com que estrutura você está trabalhando? Se você tem um objeto em R e não está certo de qual a sua estrutura de dados, pode utilizar o comando `str(objeto)`. Ele vai te dizer com o que você está trabalhando. Outra opção é perguntar ao R se a estrutura de dados do objeto é aquela que você está intuindo que ela seja, através do grupo de funções `is`.
+
+```{r str_is}
+str(v_texto)
+str(m_booleano)
+str(l_lista2)
+str(d_dataframe2)
+str(a_numero)
+
+is.vector(v_texto)
+is.matrix(m_booleano)
+is.logical(m_booleano)
+is.array(m_texto)
+is.array(a_numero)
+is.list(l_lista1)
+is.list(l_lista2)
+is.data.frame(d_dataframe1)
+is.data.frame(d_dataframe2)
+```
+
+Cabe notar que tanto a lista `l_lista1` quanto o *data frame* `d_dataframe1` não foram considerados como o dado que esperávamos. Por sua vez, `l_lista2` e `d_dataframe2` exibem a estrutura de dados que imaginamos. Veja que no comando de criação desses dois últimos objetos, explicitamos que eles seriam uma lista e um *data frame*. Essa pode ser uma boa forma de deixar o código mais legível e garantir que eles mantenham a estrutura adequada como gostaríamos.
+
+Essa é uma abordagem muito simples sobre algumas estruturas de dados simples em R: bastante gerenciável, porque você já entende muitos desses conceitos do seu trabalho no Excel. É só uma questão de traduzi-los para um ambiente diferente.
